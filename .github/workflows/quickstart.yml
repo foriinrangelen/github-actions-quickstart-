@@ -5,11 +5,11 @@ run-name: ${{ github.actor }}가 GitHub Actions를 테스트합니다 🚀  # �
 on: [push]  # 'push' 이벤트 발생 시 워크플로우 실행
 
 jobs:
-  Explore-GitHub-Actions:  # 작업(Job) 이름
-    runs-on: ubuntu-latest  # 작업을 실행할 서버 운영 체제
+  Explore-GitHub-Actions:  # 작업(Job) 이름 (수행하는 동작)
+    runs-on: ubuntu-latest  # 작업을 실행할 서버 운영 체제 (도커파일처럼 가상환경OS)
     
     steps:
-      - run: echo "🎉 이 작업은 ${{ github.event_name }} 이벤트에 의해 자동으로 트리거되었습니다."  # 이벤트 이름 출력
+      - run: echo "🎉 이 작업은 ${{ github.event_name }} 이벤트에 의해 자동으로 트리거되었습니다."  # 이벤트 이름 출력 (도커파일run과 비슷)
       - run: echo "🐧 이 작업은 GitHub에서 호스팅하는 ${{ runner.os }} 서버에서 실행되고 있습니다!"  # 실행 중인 서버 운영 체제 출력
       - run: echo "🔎 브랜치 이름은 ${{ github.ref }}이며, 리포지토리는 ${{ github.repository }}입니다."  # 브랜치 이름 및 리포지토리 정보 출력
       
